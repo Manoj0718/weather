@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/main.css">
+</head>
+
+<body>
+    <div id="tsparticles"></div>
+    <script src="../node_modules/tsparticles/dist/tsparticles.min.js"></script>
+    <script>
+        tsParticles.load('tsparticles', {
+            particles: {
+                number: {
+                    value: 250,
+                },
+                //?you can givecolrs  [ black,blue]
+                color: {
+                    value: "#ff0000",
+                    animation: {
+                        enable: true,
+                        speed: 40,
+                        sync: true
+                    }
+                },
+                shape: {
+                    type: ["polygon", "star"]
+                },
+                links: {
+                    enable: true,
+                    distance: 100,
+                    color: "#fff",
+                    opacity: 0.4,
+                    width: 1
+                },
+
+                move: {
+                    enable: true,
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onHover: {
+                            enable: true,
+                            mode: "repulse"
+                        },
+                        onClick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                },
+                detectRetina: true,
+            }
+        });
+    </script>
+</body>
+
+</html>

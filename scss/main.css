@@ -1,0 +1,300 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans.woff2) format("woff2"), url(../fonts/OpenSans.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Semibold.woff2) format("woff2"), url(../fonts/OpenSans-Semibold.woff) format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Light.woff2) format("woff2"), url(../fonts/OpenSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Bold.woff2) format("woff2"), url(../fonts/OpenSans-Bold.woff) format("woff");
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body .container,
+html .container {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to left bottom, rgba(202, 165, 236, 0.938), rgba(15, 59, 255, 0.815));
+  z-index: 2;
+  backdrop-filter: blur(100px);
+  margin: auto;
+  height: 100vh;
+  text-align: center;
+}
+
+body .container h1,
+html .container h1 {
+  padding-top: 4vh;
+  padding-left: 1px;
+  padding-right: 1px;
+  font-weight: 300;
+  color: blue;
+}
+
+body .container .inputForm_div,
+html .container .inputForm_div {
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  padding: 10px;
+}
+
+body .container .inputForm_div #cityName,
+html .container .inputForm_div #cityName {
+  width: 60%;
+  height: 4vh;
+  position: relative;
+  text-align: center;
+}
+
+body .container .inputForm_div span,
+html .container .inputForm_div span {
+  position: relative;
+  left: -35px;
+}
+
+body .container .inputForm_div button,
+html .container .inputForm_div button {
+  background-color: blue;
+  color: #ffff;
+  padding: 1vh;
+}
+
+@media screen and (max-width: 688px) {
+  body .container .inputForm_div button,
+  html .container .inputForm_div button {
+    display: block;
+    margin: auto;
+    margin-top: 2vh;
+  }
+}
+
+body .container .responce,
+html .container .responce {
+  color: white;
+  margin: 1vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+body .container .responce .image_responce,
+html .container .responce .image_responce {
+  padding: 1vh;
+  min-height: 50%;
+  color: rgba(255, 255, 255, 0.999);
+}
+
+body .container .responce .text_responce p,
+html .container .responce .text_responce p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.999);
+}
+
+@media (min-width: 689px) {
+  body .container .responce,
+  html .container .responce {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 1em;
+    width: 50%;
+    height: 40vh;
+    margin: auto;
+    justify-content: space-around;
+  }
+  body .container .responce .text_responce,
+  html .container .responce .text_responce {
+    padding: 1em;
+    font-size: 1.5em;
+  }
+  body .container .responce .image_responce,
+  html .container .responce .image_responce {
+    padding: 1em;
+  }
+  body .container #days_weather,
+  html .container #days_weather {
+    display: flex;
+    flex-direction: raw;
+    justify-content: space-around;
+    color: rgba(255, 255, 255, 0.999);
+  }
+  body .container #days_weather article,
+  html .container #days_weather article {
+    width: 50px;
+    height: 50px;
+    padding: 1vh;
+  }
+}
+
+@media screen and (max-width: 688px) {
+  body .container #days_weather,
+  html .container #days_weather {
+    display: flex;
+    flex-direction: raw;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    margin: 0.5em;
+    justify-content: space-around;
+  }
+  body .container #days_weather article,
+  html .container #days_weather article {
+    padding: 1vh;
+    color: rgba(255, 255, 255, 0.999);
+    line-height: 150%;
+  }
+}
+
+body a,
+html a {
+  font-size: 0.5em;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.999);
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  margin-top: -100px;
+}
+/*# sourceMappingURL=main.css.map */
