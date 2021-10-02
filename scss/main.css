@@ -156,7 +156,8 @@ table {
 
 body .container,
 html .container {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans',
+ sans-serif;
   background: linear-gradient(to left bottom, rgba(202, 165, 236, 0.938), rgba(15, 59, 255, 0.815));
   z-index: 2;
   backdrop-filter: blur(100px);
@@ -229,7 +230,8 @@ html .container .responce .image_responce {
 
 body .container .responce .text_responce p,
 html .container .responce .text_responce p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans',
+ sans-serif;
   line-height: 150%;
   color: rgba(255, 255, 255, 0.999);
 }
