@@ -17,6 +17,7 @@ cityName.addEventListener("keydown", checkTheWeather);
 let dataList = document.getElementById("suggestion_list");
 
 //* here we replaced {limit} with 3, meanns 3 cities , and done few adjustnment =>https://openweathermap.org/api/geocoding-api //
+
 let geoCode =
   "https://api.openweathermap.org/geo/1.0/direct?&limit=3&appid=" +
   Api_key +
