@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./scss/main.css" />
+  <script src="https://kit.fontawesome.com/9809e59f57.js" crossorigin="anonymous"></script>
+  <title>weather app</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Weather Application</h1>
+    <div class="inputForm_div">
+      <input type="text" list="suggestion_list" id="cityName" placeholder="Your City" required />
+      <datalist id="suggestion_list">
+      </datalist>
+      <span style="font-size: 1em; color: rgb(105, 71, 255)">
+        <i class="fas fa-search"></i></span>
+      <button type="submit">Search for Me</button>
+    </div>
+
+    <div class="responce">
+      <div class="text_responce">
+        <p id='responce_city_name'></p>
+        <p id='date_display'></p>
+        <p id="temp"></p>
+        <p id="wind.speed"></p>
+      </div>
+      <div class="image_responce">
+        <img src="" id="weather_image"></img>
+      </div>
+    </div>
+    <div id="days_weather">
+      <!-- TODO: i'll add animation pic here when no  -->
+      <article class="day_one">
+        <img src="" alt="" id="forcast_day_image">
+        <p class="forcast_day"></p>
+        <p class="forcast_tempretur"><span class="value"> </span> </p>
+      </article>
+      <article class="day_one">
+        <img src="" alt="" id="forcast_day_image">
+        <p class="forcast_day"></p>
+        <p class="forcast_tempretur"><span class="value"> </span> </p>
+      </article>
+      <article class="day_one">
+        <img src="" alt="" id="forcast_day_image">
+        <p class="forcast_day"></p>
+        <p class="forcast_tempretur"><span class="value"> </span> </p>
+      </article>
+      <article class="day_one">
+        <img src="" alt="" id="forcast_day_image">
+        <p class="forcast_day"></p>
+        <p class="forcast_tempretur"><span class="value"> </span> </p>
+      </article>
+      <article class="day_one">
+        <img src="" alt="" id="forcast_day_image">
+        <p class="forcast_day"></p>
+        <p class="forcast_tempretur"> <span class="value"> </span> </p>
+      </article>
+    </div>
+    <a>powered by open weather map</a>
+  </div>
+  <script src="/script.js"></script>
+</body>
+
+</html>

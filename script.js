@@ -1,5 +1,3 @@
-let Api_key = "0c618783e717de8c4e7ada7cf92e8daf";
-
 const cityName = document.getElementById("cityName");
 const button = document.querySelector("button");
 const searchIcon = document.querySelector("span");
@@ -10,14 +8,52 @@ let responce_city_name = document.getElementById("responce_city_name");
 let date = document.getElementById("date_display");
 let weather_image = document.getElementById("weather_image");
 let forcast_weather = document.getElementById("days_weather");
+let Api_key = "0c618783e717de8c4e7ada7cf92e8daf";
+
+// * event listeners //
 button.addEventListener("click", checkTheWeather);
 searchIcon.addEventListener("click", checkTheWeather);
+cityName.addEventListener("keydown", checkTheWeather);
+let dataList = document.getElementById("suggestion_list");
+
+//* here we replaced {limit} with 3, meanns 3 cities , and done few adjustnment =>https://openweathermap.org/api/geocoding-api //
+let geoCode =
+  "http://api.openweathermap.org/geo/1.0/direct?&limit=3&appid=" +
+  Api_key +
+  "&q=";
 
 function checkTheWeather($event) {
-  $event.preventDefault();
-  getData();
+  if ($event.keyCode === 13 || $event.type === "click") {
+    $event.preventDefault();
+    getData();
+  }
 }
+//! -------------------------- search input get error while start typing : so function for that -------- / /
+//* in here when u type 3rd letter , u'll get the array of suggestions. so we have to add fuction for 2 or more letters. //
+cityName.addEventListener("input", async () => {
+  //* when we add this if statement , error gone //
+  if (cityName.value.length <= 2) {
+    return;
+  }
 
+  let endpoint = geoCode + cityName.value;
+  let result = await (await fetch(endpoint)).json();
+  //* to remove previous search results //
+  dataList.innerHTML = "";
+  result.forEach((city) => {
+    //* city.state sometimes undefined. so we use ternary opertators -//
+    //* now we have suggestions, need to addd to the HTML, use <datalist> //
+    let option = document.createElement("option");
+    option.value = `${city.name}${city.state ? "," + city.state : ""} ,${
+      city.country
+    }`;
+    dataList.appendChild(option);
+
+    // console.log(
+    //   `${city.name}${city.state ? "," + city.state : ""} ,${city.country}`
+    // );
+  });
+});
 //!------------------------- get data function for main weather data----------------------------------------------- ///
 async function getData() {
   fetch(
@@ -31,7 +67,7 @@ async function getData() {
     })
     .then(function (jsonData) {
       let data = jsonData;
-      //console.log("responce data -", data);
+      //console.log("responce data -", data.cod);
       let city_id = data.id;
 
       // console.log(city_id, "weather city id");
@@ -39,11 +75,12 @@ async function getData() {
       forcast(city_id);
     })
     .catch(function (err) {
-      console.log("Fetch problem: " + err.message);
+      //console.log("Fetch problem: " + err.message);
+      //console.log("No data");
+      responce_city_name.textContent = "Check the city name again";
     });
 }
 //!------------------------- Finish get data function for main weather data----------------------------------------------- ///
-//* u can use documentation to get other matreics too : unit metrics //
 
 //!------------------------- show data function for main weather data----------------------------------------------- ///
 function showData(data) {
@@ -99,7 +136,7 @@ async function forcast(city_id) {
       //console.log(singleDay);
     }
   });
-  console.log("array", display_days);
+  //console.log("array", display_days);
   forcast_display(display_days);
 }
 

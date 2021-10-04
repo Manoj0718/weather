@@ -143,6 +143,9 @@ table {
 //* finish css formatter //
 body,
 html {
+    // filter: blur(15px); //* add blur effect to page when loding //
+    // transition: .5s;
+
     .container {
         font-family: 'Open Sans',
             sans-serif;
